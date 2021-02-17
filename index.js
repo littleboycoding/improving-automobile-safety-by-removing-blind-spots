@@ -64,7 +64,7 @@ function sceneSwitcher(index) {
       car_invis.visible = true;
       Info.innerHTML =
         "อุปกรณ์หลัก ๆ มี 3 ชิ้นคือ ตัวรถยนต์, กล้องติดรถ และเครื่องฉายภาพ (Projector) ติดตั้งที่บริเวณตัวรถ";
-      Button.innerHTML = "ลองประสบการณ์สเมือน !";
+      Button.innerHTML = "ลองประสบการณ์เสมือน !";
       break;
     case 1:
       Video.play();
