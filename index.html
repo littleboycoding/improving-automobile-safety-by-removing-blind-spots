@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improving Automobile Safety by Removing Blind Spots</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        font-family: Kanit, monospace;
+      }
+
+      @keyframes flyDown {
+        from {
+          top: -500px;
+          opacity: 0;
+        }
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+
+      #title {
+        font-size: 1.5em;
+        position: absolute;
+        top: -500px;
+        left: 50%;
+        padding: 0 30px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateX(-50%);
+
+        animation-delay: 0.5s;
+        animation-name: flyDown;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        z-index: 2;
+      }
+      #title h1 {
+        white-space: nowrap;
+      }
+      #info {
+        position: absolute;
+        padding: 10px;
+        font-size: 1.2em;
+        background-color: white;
+        width: 40%;
+        left: 50%;
+        border-radius: 10px;
+        bottom: 100px;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .button {
+        position: absolute;
+        left: 50%;
+        bottom: 25px;
+        transform: translateX(-50%);
+        padding: 10px 15px;
+        border: 2px white solid;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 1.5em;
+        z-index: 2;
+      }
+      .button:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+      video {
+        display: none;
+      }
+      canvas {
+        position: relative;
+        z-index: 1;
+      }
+      #credit {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        display: none;
+
+        font-size: calc(0.5vw + 0.5vh + 4px);
+      }
+      #loading {
+        background-color: black;
+        color: white;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" src="index.js"></script>
+    <video loop>
+      <source src="driving.mp4" type="video/mp4" />
+    </video>
+    <div id="loading">
+      <span>กำลังโหลดข้อมูล . . .</span>
+    </div>
+    <div id="title">
+      <h1>Improving Automobile Safety by Removing Blind Spots 🚔</h1>
+      <p>โครงการ แก้ไขปัญหาจุดบอดในรถยนต์</p>
+    </div>
+    <div id="credit">
+      <h2>จัดทำโดย</h2>
+      <span>นายธณวัฒน์ ยอดนิล เลขที่ 39</span>
+      <span>นายพันธกาน ส้มฉุน เลขที่ 28</span>
+      <span>นายนภัทร วรรณหม้อ เลขที่ 32</span>
+      <span>นายภัทรพล ใหม่รุ่งโรจน์ เลขที่ 19</span>
+      <br />
+      <b> อ้างอิง</b>
+      <a href="https://mymodernmet.com/alaina-gassler-science-fair-project/"
+        >ต้นแบบโครงการ</a
+      >
+      <a href="https://www.turbosquid.com/Search/3D-Models/free/car+interior"
+        >ต้นแบบโมเดล</a
+      >
+      <p>ใช้ Three.js ในการ Render และ Blender ในการจัดการเรื่องโมเดล</p>
+    </div>
+    <div id="info">
+      หลักการคือ นำกล้องจิ๋วแบบกล้องติดหน้ารถ ติดไว้ที่เสาเอ
+      แล้วก็ลากสายไปยังโปรเจคเตอร์จิ๋วที่ติดอยู่ในรถซึ่งจะฉายภาพที่กล้องถ่ายแบบ
+      real-time ทำให้สามารถมองโดยรอบได้ง่าย
+    </div>
+    <div class="button">ส่วนประกอบ</div>
+  </body>
+</html>
