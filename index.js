@@ -65,6 +65,7 @@ function sceneSwitcher(index) {
       Info.innerHTML =
         "อุปกรณ์หลัก ๆ มี 3 ชิ้นคือ ตัวรถยนต์, กล้องติดรถ และเครื่องฉายภาพ (Projector) ติดตั้งที่บริเวณตัวรถ";
       Button.innerHTML = "ลองประสบการณ์เสมือน !";
+      document.documentElement.requestFullscreen();
       break;
     case 1:
       Video.play();
@@ -228,7 +229,9 @@ const animate = function () {
   renderer.render(scene, camera);
 };
 
-window.addEventListener("DOMContentLoaded", animate);
+window.addEventListener("DOMContentLoaded", () => {
+  animate();
+});
 
 Button.addEventListener("click", () => {
   if (cam && projector && car && car_invis) sceneSwitcher(sceneIndex);
@@ -236,6 +239,9 @@ Button.addEventListener("click", () => {
 
 window.addEventListener("resize", (event) => {
   renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.fov = 75;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
 });
 
 const cameraMoveScale = 0.4;

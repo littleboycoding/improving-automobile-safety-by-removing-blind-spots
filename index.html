@@ -32,7 +32,7 @@
       }
 
       #title {
-        font-size: 1.5em;
+        font-size: calc(5px + 1vw);
         position: absolute;
         top: -500px;
         left: 50%;
@@ -54,8 +54,8 @@
       #info {
         position: absolute;
         padding: 10px;
-        font-size: 1.2em;
-        background-color: white;
+        font-size: calc(4.5px + 1vw);
+        background-color: rgba(255, 255, 255, 0.5);
         width: 40%;
         left: 50%;
         border-radius: 10px;
@@ -74,7 +74,7 @@
         color: white;
         font-weight: bold;
         background-color: rgba(0, 0, 0, 0.3);
-        font-size: 1.5em;
+        font-size: calc(5px + 1vw);
         z-index: 2;
       }
       .button:hover {
@@ -89,6 +89,7 @@
         z-index: 1;
       }
       #credit {
+        background-color: rgba(255, 255, 255, 0.5);
         position: absolute;
         top: 55%;
         left: 50%;
@@ -117,6 +118,21 @@
         align-items: center;
         font-size: 2em;
         opacity: 1;
+      }
+
+      @media (max-width: 800px) {
+        .button {
+          position: fixed;
+          bottom: 20px;
+        }
+        #info {
+          position: fixed;
+          bottom: 65px;
+          width: 40%;
+        }
+        #credit {
+          transform: translate(-50%, -35%);
+        }
       }
     </style>
   </head>
